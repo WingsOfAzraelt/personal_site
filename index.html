@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>Tenghui Li 李滕辉</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #0b1220;
+      --accent: #38bdf8;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1d283a 0, #020617 55%, #000 100%);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .card {
+      width: 100%;
+      max-width: 720px;
+      background: linear-gradient(135deg, #020617 0%, #020617 40%, #0b1220 100%);
+      border-radius: 18px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      padding: 28px 24px;
+      box-shadow: 0 25px 60px rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(16px);
+    }
+    @media (min-width: 640px) {
+      .card { padding: 32px 36px 30px; }
+      .header { display: flex; align-items: center; justify-content: space-between; }
+    }
+    .title {
+      font-size: 26px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .badge {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      padding: 3px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      color: var(--accent);
+      background: rgba(15, 23, 42, 0.85);
+    }
+    .subtitle {
+      margin-top: 6px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .section {
+      margin-top: 22px;
+    }
+    .section-title {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #64748b;
+      margin-bottom: 8px;
+    }
+    .section p {
+      margin: 0 0 4px;
+      font-size: 14px;
+      line-height: 1.7;
+      color: #cbd5f5;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 10px;
+    }
+    .tag {
+      font-size: 11px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      color: #e5e7eb;
+      background: rgba(15, 23, 42, 0.75);
+    }
+    .links {
+      margin-top: 22px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .link-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--text);
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      text-decoration: none;
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.2), transparent 55%);
+      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, border-color 0.12s ease-out;
+    }
+    .link-pill span {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #9ca3af;
+    }
+    .link-pill strong {
+      font-weight: 500;
+    }
+    .link-pill:hover {
+      transform: translateY(-1px);
+      border-color: rgba(56, 189, 248, 0.9);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.9);
+    }
+    .footer {
+      margin-top: 18px;
+      font-size: 11px;
+      color: #6b7280;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <header class="header">
+      <div>
+        <div class="badge">PERSONAL PROFILE</div>
+        <h1 class="title">
+          你的名字
+        </h1>
+        <p class="subtitle">PhD student in computational chemistry</p>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="section-title">About</div>
+      <p>Quantum chemistry</p>
+      <p>Zhejiang University, Department of Chemistry</p>
+    </section>
+
+    <section class="section">
+      <div class="section-title">Highlights</div>
+      <p>• Nonadiabatic dynamics</p>
+      <p>• Computational spectroscopy</p>
+      <p>• Quantum dots</p>
+    </section>
+
+    <section class="section">
+      <div class="section-title">Contact</div>
+      <div class="links">
+        <a class="link-pill" href="mailto:you@example.com">
+          <span>Mail</span>
+          <strong>you@example.com</strong>
+        </a>
+        <a class="link-pill" href="https://github.com/WingsOfAzraelt" target="_blank">
+          <span>GitHub</span>
+          <strong>@WingsOfAzraelt</strong>
+        </a>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>最后更新：2026-03</div>
+      <div>基于 GitHub Pages 构建</div>
+    </footer>
+  </main>
+</body>
+</html>
