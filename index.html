@@ -1,183 +1,219 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Tenghui Li 李滕辉</title>
+  <title>Tenghui Li 李滕辉- Zhejiang University</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Your Name, brief academic profile and research interests.">
   <style>
     :root {
-      --bg: #0f172a;
-      --card-bg: #0b1220;
-      --accent: #38bdf8;
-      --text: #e5e7eb;
-      --muted: #9ca3af;
+      --text-main: #111827;
+      --text-muted: #4b5563;
+      --border-subtle: #e5e7eb;
+      --accent: #2563eb;
+      --bg: #f9fafb;
+      --section-title: #111827;
     }
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      min-height: 100vh;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #1d283a 0, #020617 55%, #000 100%);
-      color: var(--text);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, -system-ui,
+                   "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+      background: var(--bg);
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
     }
-    .card {
-      width: 100%;
-      max-width: 720px;
-      background: linear-gradient(135deg, #020617 0%, #020617 40%, #0b1220 100%);
-      border-radius: 18px;
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      padding: 28px 24px;
-      box-shadow: 0 25px 60px rgba(15, 23, 42, 0.9);
-      backdrop-filter: blur(16px);
+    .page {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 32px 20px 48px;
     }
-    @media (min-width: 640px) {
-      .card { padding: 32px 36px 30px; }
-      .header { display: flex; align-items: center; justify-content: space-between; }
+    @media (min-width: 768px) {
+      .page { padding: 48px 16px 64px; }
+      .header-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.5fr);
+        column-gap: 40px;
+        align-items: flex-start;
+      }
     }
-    .title {
-      font-size: 26px;
+    header {
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 20px;
+      margin-bottom: 28px;
+    }
+    h1 {
+      font-size: 28px;
+      line-height: 1.25;
+      margin: 0 0 6px;
       font-weight: 600;
-      letter-spacing: 0.02em;
-      display: flex;
-      align-items: center;
-      gap: 10px;
     }
-    .badge {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
-      padding: 3px 8px;
-      border-radius: 999px;
-      border: 1px solid rgba(56, 189, 248, 0.4);
-      color: var(--accent);
-      background: rgba(15, 23, 42, 0.85);
+    @media (min-width: 768px) {
+      h1 { font-size: 32px; }
     }
-    .subtitle {
-      margin-top: 6px;
+    .affiliation {
       font-size: 14px;
-      color: var(--muted);
+      color: var(--text-muted);
+      margin: 0 0 10px;
     }
-    .section {
-      margin-top: 22px;
+    .title-line {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin: 0;
     }
-    .section-title {
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: #64748b;
-      margin-bottom: 8px;
+    .contact-block {
+      border-left: 3px solid var(--accent);
+      padding-left: 14px;
+      margin-top: 10px;
+      font-size: 14px;
+      color: var(--text-muted);
     }
-    .section p {
-      margin: 0 0 4px;
+    .contact-block div {
+      margin-bottom: 4px;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    main {
       font-size: 14px;
       line-height: 1.7;
-      color: #cbd5f5;
     }
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 10px;
+    section {
+      margin-bottom: 26px;
     }
-    .tag {
-      font-size: 11px;
-      padding: 3px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      color: #e5e7eb;
-      background: rgba(15, 23, 42, 0.75);
+    h2 {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 0 0 8px;
+      color: var(--section-title);
     }
-    .links {
-      margin-top: 22px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .link-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
+    .section-subtitle {
       font-size: 13px;
-      color: var(--text);
-      padding: 7px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      text-decoration: none;
-      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.2), transparent 55%);
-      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, border-color 0.12s ease-out;
+      color: var(--text-muted);
+      margin-bottom: 4px;
     }
-    .link-pill span {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: #9ca3af;
+    ul {
+      margin: 6px 0 0 18px;
+      padding: 0;
     }
-    .link-pill strong {
+    li { margin-bottom: 4px; }
+    .item-title {
       font-weight: 500;
     }
-    .link-pill:hover {
-      transform: translateY(-1px);
-      border-color: rgba(56, 189, 248, 0.9);
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.9);
+    .item-meta {
+      font-size: 13px;
+      color: var(--text-muted);
     }
-    .footer {
-      margin-top: 18px;
-      font-size: 11px;
-      color: #6b7280;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 6px;
+    .tag-row {
+      margin-top: 6px;
+    }
+    .tag {
+      display: inline-block;
+      font-size: 12px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      margin-right: 4px;
+      margin-bottom: 4px;
+      background-color: #fff;
+    }
+    .small-note {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-top: 6px;
     }
   </style>
 </head>
 <body>
-  <main class="card">
-    <header class="header">
-      <div>
-        <div class="badge">PERSONAL PROFILE</div>
-        <h1 class="title">
-          你的名字
-        </h1>
-        <p class="subtitle">PhD student in computational chemistry</p>
+  <div class="page">
+    <header>
+      <div class="header-grid">
+        <div>
+          <h1>Tenghui Li</h1>
+          <p class="affiliation">Department of Chemistry / Zhejiang university</p>
+        </div>
+        <div>
+          <div class="contact-block">
+            <div>Email: <a href="lith@zju.edu.cn">lith@zju.edu.cn</a></div>
+            <div>GitHub: <a href="https://github.com/WingsOfAzraelt" target="_blank">github.com/WingsOfAzraelt</a></div>
+			<div>Orcid: <a href="https://orcid.org/my-orcid?orcid=0009-0004-2753-5563">0009-0004-2753-5563</a></div>
+          </div>
+        </div>
       </div>
     </header>
 
-    <section class="section">
-      <div class="section-title">About</div>
-      <p>Quantum chemistry</p>
-      <p>Zhejiang University, Department of Chemistry</p>
-    </section>
+    <main>
+      <section>
+        <h2>Short Bio</h2>
+        <p>
+          I am currently a PhD student in Department of Chemistry at ZJU. My research interests include computational spectroscopy, quantum embedding theory and nonadiabatic dynamics simulation in extended systems.
+        </p>
+      </section>
 
-    <section class="section">
-      <div class="section-title">Highlights</div>
-      <p>• Nonadiabatic dynamics</p>
-      <p>• Computational spectroscopy</p>
-      <p>• Quantum dots</p>
-    </section>
+      <section>
+        <h2>Research experience</h2>
+        <ul>
+          <li>
+            <span class="item-title">Nonadiabatic molecular dynamics simulation of carrier transport in QDs</span><br>
+          </li>
+		  <li>
+		    <span class="item-title">Electronic structure analysis and transition property exploration of QDs</span><br>
+		  </li>
+		  <li>
+		    <span class="item-title">Atomistic modeling and morphological dynamics of QDs</span><br>
+		  </li>
+        </ul>
+      </section>
 
-    <section class="section">
-      <div class="section-title">Contact</div>
-      <div class="links">
-        <a class="link-pill" href="mailto:you@example.com">
-          <span>Mail</span>
-          <strong>you@example.com</strong>
-        </a>
-        <a class="link-pill" href="https://github.com/WingsOfAzraelt" target="_blank">
-          <span>GitHub</span>
-          <strong>@WingsOfAzraelt</strong>
-        </a>
-      </div>
-    </section>
+      <section>
+        <h2>Education</h2>
+        <ul>
+          <li>
+            <span class="item-title">2017 – 2021, B.Sc. in Chemistry, Zhejiang University</span><br>
+          </li>
+		  <li>
+		  <span class="item-title">2021 – present, Ph. D. in Chemistry, Zhejiang University</span><br>
+		  </li>
+        </ul>
+      </section>
 
-    <footer class="footer">
-      <div>最后更新：2026-03</div>
-      <div>基于 GitHub Pages 构建</div>
-    </footer>
-  </main>
+      <section>
+        <h2>Publications</h2>
+        <ul>
+          <li>
+            <span class="item-title">Phonon Bottleneck in the Hot Electron Relaxation of n-Doped Quantum Dots: A Large-Scale Nonadiabatic Dynamics Perspective</span><br>
+            <span class="item-meta"><a href="https://doi.org/10.1021/acsnano.5c17002">ACS nano 2026</a></span><br>
+          </li>
+          <li>
+            <span class="item-title">Reversible Facet Reconstruction of CdSe/CdS Core/Shell Nanocrystals by Facet-Ligand Pairing</span><br>
+            <span class="item-meta"><a href="https://doi.org/10.1021/jacs.2c13500">JACS 2023</a></span><br>
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Awards & Honors</h2>
+        <ul>
+          <li>
+            <span class="item-title">Zhejiang Provoncial scholarship</span><br>
+            <span class="item-meta">2019</span>
+          </li>
+          <li>
+            <span class="item-title">Outstanding graduates of Zhejiang Province</span><br>
+            <span class="item-meta">2021</span>
+          </li>
+          <li>
+            <span class="item-title">Outstanding graduates of Zhejiang University</span><br>
+            <span class="item-meta">2021, 2026</span>
+          </li>
+        </ul>
+      </section>
+	  
+    </main>
+  </div>
 </body>
 </html>
